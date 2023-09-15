@@ -6,7 +6,7 @@
  * do not print 2 and 4
  * use _putchar twice in your code
  *
- * Return: Always 0 (succes)
+ * Return: Always 0 (success)
  */
 
 void print_most_numbers(void)
@@ -17,7 +17,7 @@ void print_most_numbers(void)
 	{
 		if (num == 2 || num == 4)
 			continue;
-			_putchar(num + 48);
+		_putchar(num + 48);
 	}
 	_putchar('\n');
 }
