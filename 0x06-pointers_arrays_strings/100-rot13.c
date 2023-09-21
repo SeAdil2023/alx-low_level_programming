@@ -10,21 +10,21 @@
 
 char *rot13(char *s)
 {
-	char *ptr = s;
+	int i;
+	int j;
+	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-
-	while (*ptr)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		char c = *ptr;
-
-		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		for (j = 0; j < 52; j++)
 		{
-			char base = (c >= 'a' && c <= 'z') ? 'a' : 'A';
-			*ptr = (c - base + 13) % 26 + base;
+			if (s[i] == data1[j])
+			{
+				s[i] = datarot[j];
+				break;
+			}
 		}
-
-		ptr++;
 	}
-
 	return (s);
 }
