@@ -9,16 +9,17 @@
 char *rot13(char *s)
 {
 	char *ptr = s;
-	char c, base;
+
 
 	while (*ptr)
 	{
-		c = *ptr;
+		char c = *ptr;
 		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		{
-			base = (c >= 'a' && c <= 'z') ? 'a' : 'A';
+			char base = (c >= 'a' && c <= 'z') ? 'a' : 'A';
 			*ptr = (c - base + 13) % 26 + base;
 		}
+
 		ptr++;
 	}
 
